@@ -9,7 +9,7 @@ function ProductList() {
     const [addedToCart, setAddedToCart] = useState({});
 
     const handleAddToCart = (product) => {
-        dispatch(addItem(product));
+        dispatch(addItem({ ...plant, quantity: 1 }));
         setAddedToCart((prevState) => ({
            ...prevState,
            [product.name]: true,
@@ -285,9 +285,15 @@ const handlePlantsClick = (e) => {
             {category.plants.map((plant, plantIndex) => (
             <div className="product-card" key={plantIndex}>
                 <img className="product-image" src={plant.image} alt={plant.name} />
-                <div className="product-title">{plant.name}</div>
-                {/*Similarly like the above plant.name show other details like description and cost*/}
-                <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                <h3><div className="product-title">{plant.name}</div></h3>
+                <p>{plant.description}</p>
+                <p className="product-price">{plant.cost}</p>
+                <button
+                    className={`product-button ${addedToCart[plant.name] ? 'added-to-cart' : ''}`}
+                    onClick={() => handleAddToCart(plant)}
+                        >
+                    {addedToCart[plant.name] ? 'Added' : 'Add to Cart'}
+                </button>
             </div>
             ))}
         </div>
