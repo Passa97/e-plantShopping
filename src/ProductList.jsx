@@ -28,7 +28,7 @@ function ProductList() {
                 {
                     name: "Snake Plant",
                     image: "https://cdn.pixabay.com/photo/2021/01/22/06/04/snake-plant-5939187_1280.jpg",
-                    description: "Produces oxygen at night, improving air quality.",
+                    description: "Produces oxygen at night improving air quality.",
                     cost: "$15"
                 },
                 {
