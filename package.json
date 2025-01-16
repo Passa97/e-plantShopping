@@ -1,6 +1,7 @@
 {
   "name": "shoppingcart",
   "private": true,
+  "homepage": "https://passa97.github.io/e-plantShopping/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
